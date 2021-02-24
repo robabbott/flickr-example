@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
+import GalleryImg from './GalleryImg';
+
 class GalleryImages extends Component {
   render() {
     const images = this.props.images.map((item) =>
-      <img
-        key={item.id}
-        src={`https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`}
-        alt={item.title} />
+      <GalleryImg image={item} />
     );
 
     return (

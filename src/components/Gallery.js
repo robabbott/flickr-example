@@ -14,7 +14,7 @@ class Gallery extends Component {
   }
 
   componentWillMount() {
-    const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&text=cancun&per_page=12&format=json&nojsoncallback=true`;
+    const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&text=cancun&sort=interestingness-desc&per_page=15&format=json&nojsoncallback=true`;
     axios.get(url)
       .then(response => {
         this.setState({

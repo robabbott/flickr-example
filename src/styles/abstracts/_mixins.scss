@@ -1,0 +1,24 @@
+// Mixins
+
+// Responsive text
+@mixin font-sizes($map) {
+  font-size: _calc-rem(map-get($map, sm));
+
+  @if map-has-key($map, 'md') {
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+      font-size: _calc-rem(map-get($map, md));
+    }
+  }
+
+  @if map-has-key($map, 'lg') {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+      font-size: _calc-rem(map-get($map, lg));
+    }
+  }
+  
+  @if map-has-key($map, 'xl') {
+    @media (min-width: map-get($grid-breakpoints, 'xl')) {
+      font-size: _calc-rem(map-get($map, xl));
+    }
+  }
+}

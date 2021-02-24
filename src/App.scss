@@ -1,0 +1,12 @@
+// Abstracts
+@import 'styles/abstracts/variables.scss';
+@import 'styles/abstracts/functions.scss';
+@import 'styles/abstracts/mixins.scss';
+
+// Base
+@import 'styles/base/typography.scss';
+
+// Components
+@import 'styles/components/module.scss';
+@import 'styles/components/header.scss';
+@import 'styles/components/gallery.scss';
