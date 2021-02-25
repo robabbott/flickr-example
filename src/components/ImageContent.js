@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class ImageContent extends Component {
   render() {
     const sizeLarge = this.props.sizes.filter(function(item) {
-      return item.label === 'Large 2048';
+      return (item.label === 'Large 2048') ? item.label === 'Large 2048' : item.label === 'Original';
     })[0];
 
     const imageDate = new Date(this.props.content.dates.taken);
