@@ -1,10 +1,6 @@
-import './App.scss';
+import { Route, Switch } from 'react-router-dom';
 
-import {
-  BrowserRouter,
-  Route,
-  Switch
-} from 'react-router-dom';
+import './App.scss';
 
 // Components
 import Header from './components/Header';
@@ -13,15 +9,13 @@ import Image from './components/Image';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="container">
-        <Route component={Header} />
-        <Switch>
-          <Route exact path="/" component={Gallery} />
-          <Route path="/photo/:id" component={Image} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div className="container">
+      <Route component={Header} />
+      <Switch>
+        <Route exact path="/" component={Gallery} />
+        <Route path="/photos/:id" component={Image} />
+      </Switch>
+    </div>
   );
 }
 

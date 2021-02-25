@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class ImageContent extends Component {
   render() {
@@ -18,7 +19,7 @@ class ImageContent extends Component {
           <h2 className="image__content-hdg hdg hdg--2">{this.props.content.title._content}</h2>
           <p className="image__content-author">by {this.props.content.owner.realname}</p>
           <p className="image__content-date">{imageDate.toString()}</p>
-          <a className="image__content-btn btn" href="/">Back to Gallery</a>
+          <Link className="image__content-btn btn" to="/">Back to Gallery</Link>
         </div>
       </div>
     )
