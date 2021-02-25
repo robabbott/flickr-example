@@ -4,7 +4,9 @@
     flex-wrap: wrap;
 
     &-item {
+      opacity: 0;
       flex-basis: 100%;
+      transition: opacity .5s ease-in-out;
 
       @media only screen and (min-width: map-get($grid-breakpoints, 'md'))  {
         flex-basis: 50%;
@@ -12,6 +14,16 @@
 
       @media only screen and (min-width: map-get($grid-breakpoints, 'lg'))  {
         flex-basis: 33.3333%;
+      }
+
+      .active & {
+        opacity: 1;
+      }
+
+      @for $i from 1 through 15 {
+          &:nth-child(#{$i}n) {
+            transition-delay: #{$i * 0.1}s;
+          }
       }
     }
   }

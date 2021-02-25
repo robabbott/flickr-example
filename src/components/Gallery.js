@@ -10,6 +10,7 @@ class Gallery extends Component {
     this.state = {
       loading: true,
       images: [],
+      class: ''
     }
   }
 
@@ -22,6 +23,13 @@ class Gallery extends Component {
           images: response.data.photos.photo,
           loading: false
         })
+
+        // Set timeout for more elegant fade in
+        setTimeout(() => {
+          this.setState({
+            class: 'active'
+          })
+        }, 150);
       })
       .catch(error => {
         console.log('Error getting images', error);
@@ -30,10 +38,10 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div className="gallery module">
+      <div className={`gallery module ${this.state.class}`}>
         {
           (this.state.loading) ? <Loader/> :
-            <GalleryImages images={this.state.images} />
+            <GalleryImages images={this.state.images} class={this.state.class} />
         }
       </div>
     )

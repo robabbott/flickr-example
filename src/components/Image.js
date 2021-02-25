@@ -10,7 +10,8 @@ class Image extends Component {
     this.state = {
       loading: true,
       imageSizes: [],
-      imageContent: null
+      imageContent: null,
+      class: ''
     }
   }
 
@@ -30,6 +31,13 @@ class Image extends Component {
               imageSizes: response.data.sizes.size,
               loading: false
             })
+
+            // Set timeout for more elegant fade in
+            setTimeout(() => {
+              this.setState({
+                class: 'active'
+              })
+            }, 150);
           })
           .catch(error => {
             console.log('Error getting image sizes', error);
@@ -42,7 +50,7 @@ class Image extends Component {
 
   render() {
     return (
-      <div className="image module">
+      <div className={`image module ${this.state.class}`}>
         {
           (this.state.loading) ? <Loader/> :
             <ImageContent content={this.state.imageContent} sizes={this.state.imageSizes} />
