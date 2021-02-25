@@ -6,14 +6,13 @@ class GalleryImg extends Component {
 
     return (
       <div className="gallery__images-item">
-        <div className="gallery__item">
-          <h3 class="gallery__item-hdg hdg--3">{img.title}</h3>
+        <a className="gallery__item" href={"/photo/" + img.id}>
+          <h3 className="gallery__item-hdg hdg--3">{img.title}</h3>
           <img
             className="gallery__item-img"
-            key={img.id}
             src={`https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}.jpg`}
             alt={img.title} />
-        </div>
+        </a>
       </div>
     )
   }

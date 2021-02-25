@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Loader from './Loader';
 import GalleryImages from './GalleryImages';
 
 class Gallery extends Component {
-
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       loading: true,
       images: [],
@@ -14,7 +14,8 @@ class Gallery extends Component {
   }
 
   componentWillMount() {
-    const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&text=cancun&sort=interestingness-desc&per_page=15&format=json&nojsoncallback=true`;
+    const url = `${process.env.REACT_APP_API_BASE}?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&text=cancun&sort=interestingness-desc&per_page=15&format=json&nojsoncallback=true`;
+    
     axios.get(url)
       .then(response => {
         this.setState({
@@ -31,7 +32,7 @@ class Gallery extends Component {
     return (
       <div className="gallery module">
         {
-          (this.state.loading) ? <p>Loading</p> :
+          (this.state.loading) ? <Loader /> :
             <GalleryImages images={this.state.images} />
         }
       </div>

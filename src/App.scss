@@ -4,9 +4,13 @@
 @import 'styles/abstracts/mixins.scss';
 
 // Base
+@import 'styles/base/base.scss';
 @import 'styles/base/typography.scss';
+@import 'styles/base/buttons.scss';
 
 // Components
 @import 'styles/components/module.scss';
 @import 'styles/components/header.scss';
 @import 'styles/components/gallery.scss';
+@import 'styles/components/image.scss';
+@import 'styles/components/loader.scss';

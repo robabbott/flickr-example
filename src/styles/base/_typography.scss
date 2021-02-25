@@ -1,12 +1,11 @@
 .hdg {
-  display: block;
-  margin: 0 0 30px;
   font-family: $font-heading;
   line-height: 1;
 
   &--1 {
     @include font-sizes((sm: 30px, lg: 50px, xl: 70px));
     font-weight: $font-weight-regular;
+    color: $gray-light;
   }
 
   &--2 {
@@ -19,4 +18,10 @@
     @include font-sizes((sm: 16px, lg: 18px, xl: 20px));
     font-weight: $font-weight-light;
   }
+}
+
+.hdg,
+p {
+  display: block;
+  margin: 0 0 30px;
 }

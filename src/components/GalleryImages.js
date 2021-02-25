@@ -5,7 +5,7 @@ import GalleryImg from './GalleryImg';
 class GalleryImages extends Component {
   render() {
     const images = this.props.images.map((item) =>
-      <GalleryImg image={item} />
+      <GalleryImg key={item.id} image={item} />
     );
 
     return (
