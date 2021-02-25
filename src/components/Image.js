@@ -44,7 +44,7 @@ class Image extends Component {
     return (
       <div className="image module">
         {
-          (this.state.loading) ? <Loader /> :
+          (this.state.loading) ? <Loader/> :
             <ImageContent content={this.state.imageContent} sizes={this.state.imageSizes} />
         }
       </div>

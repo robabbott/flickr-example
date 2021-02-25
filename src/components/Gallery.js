@@ -13,7 +13,7 @@ class Gallery extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const url = `${process.env.REACT_APP_API_BASE}?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&text=cancun&sort=interestingness-desc&per_page=15&format=json&nojsoncallback=true`;
     
     axios.get(url)
@@ -32,7 +32,7 @@ class Gallery extends Component {
     return (
       <div className="gallery module">
         {
-          (this.state.loading) ? <Loader /> :
+          (this.state.loading) ? <Loader/> :
             <GalleryImages images={this.state.images} />
         }
       </div>
