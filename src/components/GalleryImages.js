@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import GalleryImg from './GalleryImg';
 
-class GalleryImages extends Component {
-  render() {
-    const images = this.props.images.map((item) =>
-      <GalleryImg key={item.id} image={item} />
-    );
+const GalleryImages = (props) => {
+  const images = props.images.map((item) =>
+    <GalleryImg key={item.id} image={item} />
+  );
 
-    return (
-      <div className="gallery__images">
-        {images}
-      </div>
-    )
-  }
+  return (
+    <div className="gallery__images">
+      {images}
+    </div>
+  )
 }
 
 export default GalleryImages;
